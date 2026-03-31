@@ -3,7 +3,9 @@
   <h1>π CieloVision x RuView</h1>
   <p><b>Enterprise Spatial Intelligence: Hybrid AI Vision & WiFi DensePose Platform</b></p>
   
-  <a href="https://ruvnet.github.io/RuView/">
+<a href="https://trinosx.github.io/DENSELAB/">
+  <img src="https://trinosx.github.io/DENSELAB/assets/v2-screen.png" alt="CieloVision Dashboard" width="100%">
+</a>
     <img src="https://ruvnet.github.io/RuView/assets/v2-screen.png" alt="CieloVision Hybrid Dashboard" width="100%">
   </a>
   

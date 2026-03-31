@@ -1,5 +1,69 @@
 # π RuView
+<div align="center">
+  <h1>π CieloVision x RuView</h1>
+  <p><b>Enterprise Spatial Intelligence: Hybrid AI Vision & WiFi DensePose Platform</b></p>
+  
+  <a href="https://ruvnet.github.io/RuView/">
+    <img src="https://ruvnet.github.io/RuView/assets/v2-screen.png" alt="CieloVision Hybrid Dashboard" width="100%">
+  </a>
+  
+  <br />
+  
+  [![Edge Compute](https://img.shields.io/badge/Edge-RPi5%20%7C%20Hailo--8-blue.svg)]()
+  [![WiFi Sensing](https://img.shields.io/badge/Sensor-ESP32--S3-purple.svg)]()
+  [![Latency](https://img.shields.io/badge/Inference-%3C40ms-brightgreen.svg)]()
+  [![Compliance](https://img.shields.io/badge/Privacy-GDPR%20Ready-yellow.svg)]()
+</div>
 
+> **CieloVision x RuView** is a full-stack spatial intelligence platform. By fusing optical AI (Computer Vision) with RF sensing (WiFi CSI DensePose), it provides an unprecedented, privacy-compliant understanding of physical spaces. It transforms raw pixels and radio waves into structured business intelligence, demographic profiling, and contactless physiological data.
+
+## 👁️ The Hybrid Advantage: Video + Wireless Sensing
+
+Traditional camera systems suffer from blind spots, lighting dependencies, and privacy limitations. RuView's standalone WiFi sensing is revolutionary, but lacks visual demographic context. 
+
+By integrating both into the **CieloVision Engine**, end-clients receive a **Unified Parametric Dashboard** that sees everything: the demographic profile of a crowd (via video) and the real-time vital signs and pose of individuals behind walls or obstructions (via WiFi).
+
+---
+
+## 📊 End-Client Dashboard & Analytics
+
+The platform extracts over 30 variables per subject, streaming directly to a customizable web dashboard. This allows operators to monitor, segment, and activate audiences in real-time.
+
+### 1. Camera Intelligence (Demographics & Behavior)
+The optical layer runs YOLOv9 / custom CNN models to extract structured data from every frame:
+* **Demographic Vectors:** Age estimation (±3yr), gender classification, and clothing style index.
+* **Affective/Cognitive States:** Emotion classification (8 states), valence/arousal scores, and engagement indexing.
+* **Behavioral Tracking:** Dwell time (seconds), zone path trajectories, and interaction frequencies.
+
+### 2. Invisible Sensing via RuView (Biometrics & Pose)
+The wireless layer turns standard ESP32-S3 Access Points into physiological sensors, overlaying data onto the visual feed:
+* **WiFi DensePose:** 17-point full-body skeletal tracking per person using Channel State Information (CSI)—no cameras required.
+* **Contactless Vitals:** Real-time Heart Rate (40-120 BPM) and Respiratory Rate (6-30 BPM) extracted via RF micro-variations.
+* **Through-Wall Sensing:** Continuous tracking and fall detection even when subjects leave the camera's line of sight.
+
+### 3. Data Marketing & Behavioral Segmentation
+The platform ingests demographic and behavioral vectors, applying an automated pipeline to generate actionable, GDPR-compliant marketing data:
+* **Macro-Segmentation:** Automatically classifies subjects into profiles (e.g., *Young Professional, Affluent Adult, Family Unit*).
+* **Micro-Segmentation:** Infers topical affinities (*Tech & Finance, Health & Beauty*) and behavioral intent.
+* **Anonymization Pipeline:** Cryptographically zeroes raw PII and biometric vectors immediately after segment assignment, exporting only clean, untraceable segment data to CRMs or Ad platforms.
+
+---
+
+## 🚀 API & Quick Start
+
+The platform is designed for seamless integration into existing enterprise stacks. We've simplified the deployment of the hybrid engine down to a few commands.
+
+### 1. Start the Hybrid Engine
+Run the core engine, bridging the Hailo-8 optical inference with the ESP32 UDP telemetry.
+
+bash
+# Start the hybrid sensing server (Video + WiFi CSI)
+./cielo-engine start \
+  --vision-model models/cielo_demographics_v4.rvf \
+  --wifi-source esp32 --udp-port 5005 \
+  --http-port 3000
+
+  
 <p align="center">
   <a href="https://x.com/rUv/status/2037556932802761004">
     <img src="assets/ruview-small-gemini.jpg" alt="RuView - WiFi DensePose" width="100%">
